@@ -1,7 +1,9 @@
 import './App.css';
+import { useState } from 'react';
 import Items from './components/Items';
 import Navbar from './components/Navbar';
-import CustomContext from './itemContext';
+import CustomContext, { itemContext } from './itemContext';
+
 
 function App() {
   // const [total, setTotal] = useState(0);

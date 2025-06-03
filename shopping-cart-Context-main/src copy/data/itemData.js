@@ -19,7 +19,11 @@ const data = [
     name: 'Hat',
     price: 400,
   },
- 
+  {
+    id: 5,
+    name: 'Socks',
+    price: 500,
+  },
 ];
 
 
