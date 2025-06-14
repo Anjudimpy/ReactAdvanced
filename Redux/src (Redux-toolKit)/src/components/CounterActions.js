@@ -1,19 +1,22 @@
 import { useDispatch, useSelector } from "react-redux";
-// change the counter actions imports
-import { incrementCounter, reset } from "../redux/reducers/counterReducer";
-import { decrementCounter } from "../redux/reducers/counterReducer";
-
+import {
+  counterSelector,
+  decrementCounter,
+  incrementCounter,
+  resetCounter
+} from "../redux/reducers/counterReducer";
 
 export const CounterActions = () => {
   const dispatch = useDispatch();
-  // change as per the store implementation
-  const { count } = useSelector((state) => state.counter);
+  // refactor to use the selector function
+  const { count } = useSelector(counterSelector);
 
   return (
     <div className="actions">
       <button
         disabled={count <= 0}
-        onClick={() => dispatch(decrementCounter())}>
+        onClick={() => dispatch(decrementCounter())}
+      >
         <img
           src="https://cdn-icons-png.flaticon.com/512/992/992683.png"
           alt="dec"
@@ -28,7 +31,7 @@ export const CounterActions = () => {
           alt="inc"
         />
       </button>
-      <button onClick={() => dispatch(reset())}>
+      <button onClick={() => dispatch(resetCounter())}>
         <img
           src="https://cdn-icons-png.flaticon.com/512/9923/9923627.png"
           alt="reset"
